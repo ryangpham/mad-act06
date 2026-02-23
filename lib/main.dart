@@ -38,7 +38,10 @@ class _CounterWidgetState extends State<CounterWidget> {
                   : (_counter > 0 && _counter <= 50
                         ? Colors.orange
                         : Colors.green),
-              child: Text('$_counter', style: const TextStyle(fontSize: 50.0)),
+              child: Text(
+                _counter >= 100 ? 'LIFTOFF!' : '$_counter',
+                style: const TextStyle(fontSize: 50.0),
+              ),
             ),
           ),
           Slider(
@@ -47,7 +50,7 @@ class _CounterWidgetState extends State<CounterWidget> {
             value: _counter.toDouble(),
             onChanged: (double value) {
               setState(() {
-                _counter = value.toInt();
+                _counter = value.toInt().clamp(0, 100);
               });
             },
             activeColor: Colors.blue,
