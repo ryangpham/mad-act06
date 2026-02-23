@@ -60,6 +60,26 @@ class _CounterWidgetState extends State<CounterWidget> {
             },
             child: const Text('Ignite'),
           ),
+          // Decrement button to decrease fuel
+          ElevatedButton(
+            onPressed: () {
+              setState(() {
+                if (_counter > 0) {
+                  _counter--;
+                }
+              });
+            },
+            child: const Text('Decrement'),
+          ),
+          // Reset button to set fuel to 0
+          ElevatedButton(
+            onPressed: () {
+              setState(() {
+                _counter = 0;
+              });
+            },
+            child: const Text('Reset'),
+          ),
         ],
       ),
     );
