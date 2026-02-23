@@ -49,6 +49,17 @@ class _CounterWidgetState extends State<CounterWidget> {
             activeColor: Colors.blue,
             inactiveColor: Colors.red,
           ),
+          // Ignite button to increment counter
+          ElevatedButton(
+            onPressed: () {
+              setState(() {
+                if (_counter < 100) {
+                  _counter++;
+                }
+              });
+            },
+            child: const Text('Ignite'),
+          ),
         ],
       ),
     );
